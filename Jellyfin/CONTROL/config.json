@@ -1,0 +1,35 @@
+{
+  "general" : {
+    "package" : "Jellyfin",
+    "name" : "Jellyfin",
+    "version" : "2019-01-04",
+    "depends" : [
+      "git",
+      "ffmpeg"
+    ],
+    "conflicts" : [],
+    "developer" : "jellyfin",
+    "maintainer" : "jellyfin",
+    "email" : "",
+    "website" : "https://jellyfin.media",
+    "architecture" : "x86-64",
+    "firmware" : "3.0"
+  },
+  "adm-desktop" : {
+    "app" : {
+      "type" : "webserver",
+      "session-id" : true
+    },
+    "privilege" : {
+      "accessible" : "users",
+      "customizable" : true
+    }
+  },
+  "register" : {
+    "prerequisites" : {
+      "enable-service" : [
+        "httpd"
+      ]
+    }
+  }
+}
