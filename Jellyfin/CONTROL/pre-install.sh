@@ -5,16 +5,14 @@ APKG_PKG_DIR=/usr/local/AppCentral/RoonServer
 case "$APKG_PKG_STATUS" in
 
 	install)
-		# post install script here
-		/bin/mkdir "$APKG_PKG_DIR/tmp"
-		/bin/mkdir "$APKG_PKG_DIR/etc"
-		
+		# pre install script here
+		# installing bash over entware
+		/usr/local/AppCentral/entware/opt/bin/opkg install bash
+		ln -sf /usr/local/AppCentral/entware/opt/bin/bash /bin/bash
 		;;
 	upgrade)
-		# post upgrade script here (restore data)
-		# cp -af $APKG_TEMP_DIR/* $APKG_PKG_DIR/etc/.
-		mv $APKG_TEMP_DIR/RoonServer.conf $APKG_PKG_DIR/etc/RoonServer.conf
-
+		# pre upgrade script here (backup data)
+		cp $APKG_PKG_DIR/etc/RoonServer.conf $APKG_TEMP_DIR/RoonServer.conf
 		;;
 	*)
 		;;
