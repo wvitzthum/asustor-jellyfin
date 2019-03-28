@@ -1,18 +1,14 @@
 #!/bin/sh
 
-APKG_PKG_DIR=/usr/local/AppCentral/RoonServer
+APKG_PKG_DIR=/usr/local/AppCentral/Jellyfin
 
 case "$APKG_PKG_STATUS" in
 
 	install)
-		# pre install script here
-		# installing bash over entware
-		/usr/local/AppCentral/entware/opt/bin/opkg install bash
-		ln -sf /usr/local/AppCentral/entware/opt/bin/bash /bin/bash
 		;;
 	upgrade)
 		# pre upgrade script here (backup data)
-		# cp $APKG_PKG_DIR/etc/RoonServer.conf $APKG_TEMP_DIR/RoonServer.conf
+		# cp $APKG_PKG_DIR/etc/Jellyfin.conf $APKG_TEMP_DIR/Jellyfin.conf
 		;;
 	*)
 		;;
