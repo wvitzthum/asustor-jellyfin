@@ -5,6 +5,7 @@
     "version" : "2019-01-04",
     "depends" : [
       "git",
+      "mono",
       "ffmpeg"
     ],
     "conflicts" : [],
