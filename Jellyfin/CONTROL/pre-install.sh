@@ -1,6 +1,6 @@
 #!/bin/sh
 
-APKG_PKG_DIR=/usr/local/AppCentral/RoonServer
+APKG_PKG_DIR=/usr/local/AppCentral/Jellyfin
 
 case "$APKG_PKG_STATUS" in
 
@@ -11,8 +11,9 @@ case "$APKG_PKG_STATUS" in
 		ln -sf /usr/local/AppCentral/entware/opt/bin/bash /bin/bash
 		;;
 	upgrade)
-		# pre upgrade script here (backup data)
-		cp $APKG_PKG_DIR/etc/RoonServer.conf $APKG_TEMP_DIR/RoonServer.conf
+		# mv $APKG_TEMP_DIR/RoonServer.conf $APKG_PKG_DIR/etc/RoonServer.conf
+		# cp -af $APKG_TEMP_DIR/* $APKG_PKG_DIR/etc/.
+		# post upgrade script here (restore data)
 		;;
 	*)
 		;;
